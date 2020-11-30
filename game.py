@@ -15,15 +15,23 @@ def move_pipes(pipes):
 		pipe.centerx -= 5
 	return pipes
 def draw_pipes(pipes):
-    for pipe in pipes:
-        if pipe.bottom >= 1024:
+	for pipe in pipes:
+		if pipe.bottom >= 1024:
+			screen.blit(pipe_surface,pipe)
+		elif pipe.bottom <= 1023 and pipe.bottom >= 2 :
+			flip_pipe = pygame.transform.flip(pipe_surface,False,True)
+			screen.blit(flip_pipe,pipe)
+        elif pipe.top >= 1 :
             screen.blit(pipe_surface,pipe)
-          
         else:
             flip_pipe = pygame.transform.flip(pipe_red,False,True)
             screen.blit(flip_pipe,pipe)
-           
 
+def remove_pipes(pipes):
+	for pipe in pipes:
+		if pipe.centerx == -600:
+			pipes.remove(pipe)
+	return pipes
 def check_collision(pipes):
     for pipe in pipes:
         if bird_rect.colliderect(pipe):
@@ -81,9 +89,9 @@ floor_x_pos=0
 bird_surface = pygame.image.load('assets/coro.png').convert_alpha()
 bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center = (100,512))
-pipe_surface = pygame.image.load('assets/mummy.png').convert_alpha()
+pipe_surface = pygame.image.load('assets/Men_bald.png').convert_alpha()
 pipe_surface = pygame.transform.scale2x(pipe_surface)
-pipe_red = pygame.image.load('assets/mummy.png').convert_alpha()  
+pipe_red = pygame.image.load('assets/women.png').convert_alpha()  
 pipe_red = pygame.transform.scale2x(pipe_red)
 pipe_list = []
 #Triggers event by timer
