@@ -7,7 +7,7 @@ def draw_floor():
 def create_pipe():
     random_pipe_pos = random.choice(pipe_height)
     bottom_pipe = pipe_surface.get_rect(midtop = (700,random_pipe_pos))
-    top_pipe = pipe_red.get_rect(midbottom = (700,random_pipe_pos - 200))
+    top_pipe = pipe_red.get_rect(midbottom = (700,random_pipe_pos - 300))
     return bottom_pipe,top_pipe
 
 def move_pipes(pipes):
@@ -62,7 +62,7 @@ pygame.mixer.pre_init(frequency = 44100,size=16,channels=1,buffer = 512)
 pygame.init()
 screen = pygame.display.set_mode((576,1024))
 clock = pygame.time.Clock()
-game_font = pygame.font.Font('corona_game_Python/04B_19.ttf',30)
+game_font = pygame.font.Font('04B_19.ttf',30)
 #Game variables 
 gravity = 0.25
 bird_movement = 0
@@ -72,31 +72,31 @@ high_score = 0
 
 
 #convert() changes it in a way to be easy for use in the python game and helps run the game at a consistent speed
-bg_surface = pygame.image.load('corona_game_Python/assets/Resize.png').convert()
+bg_surface = pygame.image.load('assets/Resize.png').convert()
 #scale2X scales the background surface and adjusts the image
 bg_surface = pygame.transform.scale2x(bg_surface)
-floor_surface = pygame.image.load('corona_game_Python/assets/base.png').convert()
+floor_surface = pygame.image.load('assets/base.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos=0
-bird_surface = pygame.image.load('corona_game_Python/assets/spirit.png').convert_alpha()
+bird_surface = pygame.image.load('assets/coro.png').convert_alpha()
 bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center = (100,512))
-pipe_surface = pygame.image.load('corona_game_Python/assets/mummy.png').convert_alpha()
+pipe_surface = pygame.image.load('assets/mummy.png').convert_alpha()
 pipe_surface = pygame.transform.scale2x(pipe_surface)
-pipe_red = pygame.image.load('corona_game_Python/assets/mummy.png').convert_alpha()  
+pipe_red = pygame.image.load('assets/mummy.png').convert_alpha()  
 pipe_red = pygame.transform.scale2x(pipe_red)
 pipe_list = []
 #Triggers event by timer
 SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE,2200)
-pipe_height = [200,400,600]
+pipe_height = [400,600,800]
 
-game_over_surface = pygame.transform.scale2x(pygame.image.load('corona_game_Python/assets/NewMessage.png').convert_alpha())
+game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/NewMessage.png').convert_alpha())
 game_over_rect = game_over_surface.get_rect(center = (288,512))
 
-corona_sound = pygame.mixer.Sound('corona_game_Python/sound/sfx_wing.wav')
-death_sound = pygame.mixer.Sound('corona_game_Python/sound/sfx_hit.wav')
-score_sound = pygame.mixer.Sound('corona_game_Python/sound/sfx_point.wav')
+corona_sound = pygame.mixer.Sound('sound/sfx_wing.wav')
+death_sound = pygame.mixer.Sound('sound/sfx_hit.wav')
+score_sound = pygame.mixer.Sound('sound/sfx_point.wav')
 score_sound_countdown = 100
 
 while True:
