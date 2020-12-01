@@ -84,7 +84,7 @@ bg_surface = pygame.transform.scale2x(bg_surface)
 floor_surface = pygame.image.load('assets/base.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos=0
-bird_surface = pygame.image.load('assets/un.png').convert_alpha()
+bird_surface = pygame.image.load('assets/virus.png').convert_alpha()
 bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center = (100,512))
 pipe_surface = pygame.image.load('assets/yellow.png').convert_alpha()
@@ -93,7 +93,7 @@ pipe_surface = pygame.transform.scale2x(pipe_surface)
 # pipe_red = pygame.transform.scale2x(pipe_red)
 pipe_list = []
 #Triggers event by timer
-SPAWNPIPE = pygame.USEREVENT
+SPAWNPIPE = pygame.USEREVENT  
 pygame.time.set_timer(SPAWNPIPE,2200)
 pipe_height = [100,200,300]
 
