@@ -6,8 +6,8 @@ def draw_floor():
 
 def create_pipe():
     random_pipe_pos = random.choice(pipe_height)
-    bottom_pipe = pipe_surface.get_rect(midtop = (700,random_pipe_pos))
-    top_pipe = pipe_red.get_rect(midbottom = (700,random_pipe_pos - 300))
+    bottom_pipe = pipe_surface.get_rect(midtop = (700,random_pipe_pos+400))
+    top_pipe = pipe_surface.get_rect(midbottom = (700,random_pipe_pos+100))
     return bottom_pipe,top_pipe
 
 def move_pipes(pipes):
@@ -16,16 +16,11 @@ def move_pipes(pipes):
 	return pipes
 def draw_pipes(pipes):
 	for pipe in pipes:
-		if pipe.bottom >= 1024:
+		if pipe.bottom >= 800:
 			screen.blit(pipe_surface,pipe)
-		elif pipe.bottom <= 1023 and pipe.bottom >= 2 :
+		else:
 			flip_pipe = pygame.transform.flip(pipe_surface,False,True)
 			screen.blit(flip_pipe,pipe)
-        elif pipe.top >= 1 :
-            screen.blit(pipe_surface,pipe)
-        else:
-            flip_pipe = pygame.transform.flip(pipe_red,False,True)
-            screen.blit(flip_pipe,pipe)
 
 def remove_pipes(pipes):
 	for pipe in pipes:
@@ -35,8 +30,9 @@ def remove_pipes(pipes):
 def check_collision(pipes):
     for pipe in pipes:
         if bird_rect.colliderect(pipe):
-            death_sound.play()
+            death_sound.play() 
             return False
+  
 
     if  bird_rect.bottom >= 950:
         return False
@@ -68,6 +64,8 @@ def update_score(score, high_score):
 	return high_score
 pygame.mixer.pre_init(frequency = 44100,size=16,channels=1,buffer = 512)
 pygame.init()
+themesong = pygame.mixer.Sound('sound/themesong.wav')
+themesong.play()
 screen = pygame.display.set_mode((576,1024))
 clock = pygame.time.Clock()
 game_font = pygame.font.Font('04B_19.ttf',30)
@@ -86,18 +84,18 @@ bg_surface = pygame.transform.scale2x(bg_surface)
 floor_surface = pygame.image.load('assets/base.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos=0
-bird_surface = pygame.image.load('assets/coro.png').convert_alpha()
+bird_surface = pygame.image.load('assets/un.png').convert_alpha()
 bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center = (100,512))
-pipe_surface = pygame.image.load('assets/Men_bald.png').convert_alpha()
+pipe_surface = pygame.image.load('assets/yellow.png').convert_alpha()
 pipe_surface = pygame.transform.scale2x(pipe_surface)
-pipe_red = pygame.image.load('assets/women.png').convert_alpha()  
-pipe_red = pygame.transform.scale2x(pipe_red)
+# pipe_red = pygame.image.load('assets/women.png').convert_alpha()  
+# pipe_red = pygame.transform.scale2x(pipe_red)
 pipe_list = []
 #Triggers event by timer
 SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE,2200)
-pipe_height = [400,600,800]
+pipe_height = [100,200,300]
 
 game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/NewMessage.png').convert_alpha())
 game_over_rect = game_over_surface.get_rect(center = (288,512))
@@ -120,7 +118,8 @@ while True:
             if event.key == pygame.K_SPACE and game_active:
                 bird_movement = 0
                 bird_movement -= 8
-                corona_sound.play()
+               
+                # corona_sound.play()
             if event.key == pygame.K_SPACE and game_active == False:
                 game_active = True 
                 pipe_list.clear()
@@ -140,6 +139,7 @@ while True:
         bird_rect.centery += bird_movement
         screen.blit(rotated_corona,(bird_rect))
         game_active =  check_collision(pipe_list)
+        
 
         # Pipes
         pipe_list = move_pipes(pipe_list)
@@ -148,7 +148,8 @@ while True:
         score_display('main_game')
         score_sound_countdown -= 1
         if score_sound_countdown <= 0:
-            score_sound.play()
+           
+            # score_sound.play()
             score_sound_countdown = 100
     else:
         screen.blit(game_over_surface,game_over_rect)
