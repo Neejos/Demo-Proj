@@ -29,19 +29,19 @@ def remove_pipes(pipes):
 	return pipes
 def check_collision(pipes):
     for pipe in pipes:
-        if bird_rect.colliderect(pipe):
+        if coro_rect.colliderect(pipe):
             death_sound.play() 
             return False
   
 
-    if  bird_rect.bottom >= 950:
+    if  coro_rect.bottom >= 950:
         return False
     return True
 
 def rotate_corona(corona):
     #Rotozoom is used for thr rotation in pygame 
-    new_bird = pygame.transform.rotozoom(corona,-bird_movement*3,1)
-    return new_bird
+    new_coro = pygame.transform.rotozoom(corona,-coro_movement*3,1)
+    return new_coro
 
 
 def score_display(game_state):
@@ -62,32 +62,33 @@ def update_score(score, high_score):
 	if score > high_score:
 		high_score = score
 	return high_score
-pygame.mixer.pre_init(frequency = 44100,size=16,channels=1,buffer = 512)
+pygame.mixer.pre_init(frequency = 48000,size=-16,channels=1,buffer = 1024)
 pygame.init()
-themesong = pygame.mixer.Sound('sound/themesong.wav')
-themesong.play()
+# themesong = pygame.mixer.Sound('sound/themesong.wav')
+pygame.mixer.music.load('sound/themesong.wav')
+pygame.mixer.music.play()
 screen = pygame.display.set_mode((576,1024))
 clock = pygame.time.Clock()
 game_font = pygame.font.Font('04B_19.ttf',30)
 #Game variables 
 gravity = 0.25
-bird_movement = 0
+coro_movement = 0
 game_active = True
 score = 0
 high_score = 0
 
 
 #convert() changes it in a way to be easy for use in the python game and helps run the game at a consistent speed
-bg_surface = pygame.image.load('assets/Resize.png').convert()
+bg_surface = pygame.image.load('assets/NewCity.png').convert()
 #scale2X scales the background surface and adjusts the image
 bg_surface = pygame.transform.scale2x(bg_surface)
-floor_surface = pygame.image.load('assets/base.png').convert()
+floor_surface = pygame.image.load('assets/stone.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos=0
-bird_surface = pygame.image.load('assets/virus.png').convert_alpha()
-bird_surface = pygame.transform.scale2x(bird_surface)
-bird_rect = bird_surface.get_rect(center = (100,512))
-pipe_surface = pygame.image.load('assets/yellow.png').convert_alpha()
+coro_surface = pygame.image.load('assets/virus.png').convert_alpha()
+coro_surface = pygame.transform.scale2x(coro_surface)
+coro_rect = coro_surface.get_rect(center = (100,512))
+pipe_surface = pygame.image.load('assets/doctor.png').convert_alpha()
 pipe_surface = pygame.transform.scale2x(pipe_surface)
 # pipe_red = pygame.image.load('assets/women.png').convert_alpha()  
 # pipe_red = pygame.transform.scale2x(pipe_red)
@@ -97,7 +98,7 @@ SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE,2200)
 pipe_height = [100,200,300]
 
-game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/NewMessage.png').convert_alpha())
+game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/Screen.png').convert_alpha())
 game_over_rect = game_over_surface.get_rect(center = (288,512))
 
 corona_sound = pygame.mixer.Sound('sound/sfx_wing.wav')
@@ -116,15 +117,15 @@ while True:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE and game_active:
-                bird_movement = 0
-                bird_movement -= 8
+                coro_movement = 0
+                coro_movement -= 8
                
                 # corona_sound.play()
             if event.key == pygame.K_SPACE and game_active == False:
                 game_active = True 
                 pipe_list.clear()
-                bird_rect.center = (100,512)
-                bird_movement = 0
+                coro_rect.center = (100,512)
+                coro_movement = 0
                 score = 0
 
         if event.type == SPAWNPIPE:
@@ -134,10 +135,10 @@ while True:
     screen.blit(bg_surface,(0,0))
     if game_active:
         #Corona
-        bird_movement += gravity
-        rotated_corona = rotate_corona(bird_surface)
-        bird_rect.centery += bird_movement
-        screen.blit(rotated_corona,(bird_rect))
+        coro_movement += gravity
+        rotated_corona = rotate_corona(coro_surface)
+        coro_rect.centery += coro_movement
+        screen.blit(rotated_corona,(coro_rect))
         game_active =  check_collision(pipe_list)
         
 
