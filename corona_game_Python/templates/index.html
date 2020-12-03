@@ -11,17 +11,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <!-- Slick Carousel -->
-  <link rel="stylesheet" href="../plugins/slick/slick.css">
-  <link rel="stylesheet" href="../plugins/slick/slick-theme.css">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/plugins/slick/slick.css') }}">
+  <!-- <link rel="stylesheet" href="../static/plugins/slick/slick.css"> -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/plugins/slick/slick-theme.css') }}">
+  <!-- <link rel="stylesheet" href="../static/plugins/slick/slick-theme.css"> -->
   <!-- FancyBox -->
-  <link rel="stylesheet" href="../plugins/fancybox/jquery.fancybox.min.css">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/plugins/fancybox/jquery.fancybox.min.css') }}">
+  <!-- <link rel="stylesheet" href="../static/plugins/fancybox/jquery.fancybox.min.css"> -->
   
   <!-- Stylesheets -->
-  <link href="../css/style.css" rel="stylesheet">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/style.css') }}">
+  <!-- <link href="../static/css/style.css" rel="stylesheet"> -->
   
   <!--Favicon-->
+  <!-- <link rel= "stylesheet" type= "image/x-icon" href= "{{ url_for('static',filename='../static/css/style.css') }}">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
 
 </head>
 
@@ -79,7 +84,7 @@
             <div class="logo">
                   <figure>
                         <a href="index.html">
-                              <img src="../images/logo.png" alt="">
+                              <img src="../static/images/logo.png" alt="">
                         </a>
                   </figure>
             </div>
@@ -191,7 +196,7 @@
 ==================================-->
 <div class="hero-slider">
     <!-- Slider Item -->
-    <div class="slider-item slide1" style="background-image:url(../images/slider/slider-bg-1-COVID-19.jpg)">
+    <div class="slider-item slide1" style="background-image:url(../static/images/slider/slider-bg-1-COVID-19.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -208,7 +213,7 @@
         </div>
     </div>
     <!-- Slider Item -->
-    <div class="slider-item" style="background-image:url(../images/slider/slider-bg-2-Food.jpg);">
+    <div class="slider-item" style="background-image:url(../static/images/slider/slider-bg-2-Food.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -224,7 +229,7 @@
         </div>
     </div>
     <!-- Slider Item -->
-    <div class="slider-item" style="background-image:url(../images/slider/slider-bg-3-Good-Hygiene_new.jpg)">
+    <div class="slider-item" style="background-image:url(../static/images/slider/slider-bg-3-Good-Hygiene_new.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -295,7 +300,7 @@
 								<div class="icon-box">
 									<figure>
 										<a href="#">
-											<img src="../images/resource/1.png" alt="">
+											<img src="../static/images/resource/1.png" alt="">
 										</a>
 									</figure>
 								</div>
@@ -309,7 +314,7 @@
 								<div class="icon-box">
 									<figure>
 										<a href="#">
-											<img src="../images/resource/2.png" alt="">
+											<img src="../static/images/resource/2.png" alt="">
 										</a>
 									</figure>
 								</div>
@@ -323,7 +328,7 @@
 								<div class="icon-box">
 									<figure>
 										<a href="#">
-											<img src="../images/resource/3.png" alt="">
+											<img src="../static/images/resource/3.png" alt="">
 										</a>
 									</figure>
 								</div>
@@ -337,7 +342,7 @@
 								<div class="icon-box">
 									<figure>
 										<a href="#">
-											<img src="../images/resource/4.png" alt="">
+											<img src="../static/images/resource/4.png" alt="">
 										</a>
 									</figure>
 								</div>
@@ -385,7 +390,7 @@
                         <div class="service-box tab-pane fade in active row" id="dormitory">
                             <div class="col-md-6">
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/78jLBNSqc3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <!-- <img class="img-responsive" src="../images/services/service-one.jpg" alt="service-image"> -->
+                                <!-- <img class="img-responsive" src="../static/images/services/service-one.jpg" alt="service-image"> -->
                             </div>
                             <div class="col-md-6">
                                 <div class="contents">
@@ -414,7 +419,7 @@
                         <!--Start single tab content-->
                         <div class="service-box tab-pane fade in" id="orthopedic">
                             <div class="col-md-6">
-                                <img class="img-responsive" src="../images/services/service-two.jpg" alt="service-image">
+                                <img class="img-responsive" src="../static/images/services/service-two.jpg" alt="service-image">
                             </div>
                             <div class="col-md-6">
                                 <div class="contents">
@@ -443,7 +448,7 @@
                         <!--Start single tab content-->
                         <div class="service-box tab-pane fade in" id="sonogram">
                             <div class="col-md-6">
-                                <img class="img-responsive" src="../images/services/service-three.jpg" alt="service-image">
+                                <img class="img-responsive" src="../static/images/services/service-three.jpg" alt="service-image">
                             </div>
                             <div class="col-md-6">
                                 <div class="contents">
@@ -472,7 +477,7 @@
                         <!--Start single tab content-->
                         <div class="service-box tab-pane fade in" id="x-ray">
                             <div class="col-md-6">
-                                <img class="img-responsive" src="../images/services/service-four.jpg" alt="service-image">
+                                <img class="img-responsive" src="../static/images/services/service-four.jpg" alt="service-image">
                             </div>
                             <div class="col-md-6">
                                 <div class="contents">
@@ -501,7 +506,7 @@
                         <!--Start single tab content-->
                         <div class="service-box tab-pane fade in" id="diagnostic">
                             <div class="col-md-6">
-                                <img class="img-responsive" src="../images/services/service-five.jpg" alt="service-image">
+                                <img class="img-responsive" src="../static/images/services/service-five.jpg" alt="service-image">
                             </div>
                             <div class="col-md-6">
                                 <div class="contents">
@@ -550,7 +555,7 @@
                 <div class="inner-box">
                     <div class="img_holder">
                         <a href="insight.html">
-                            <img src="../images/gallery/1.jpg" alt="images" class="img-responsive">
+                            <img src="../static/images/gallery/1.jpg" alt="static/images" class="img-responsive">
                         </a>
                     </div>
                     <div class="image-content text-center">
@@ -566,7 +571,7 @@
                 <div class="inner-box">
                     <div class="img_holder">
                         <a href="insight.html">
-                            <img src="../images/gallery/2.jpg" alt="images" class="img-responsive">
+                            <img src="../static/images/gallery/2.jpg" alt="static/images" class="img-responsive">
                         </a>
                     </div>
                     <div class="image-content text-center">
@@ -582,7 +587,7 @@
                 <div class="inner-box">
                     <div class="img_holder">
                         <a href="insight.html">
-                            <img src="../images/gallery/3.jpg" alt="images" class="img-responsive">
+                            <img src="../static/images/gallery/3.jpg" alt="static/images" class="img-responsive">
                         </a>
                     </div>
                     <div class="image-content text-center">
@@ -598,7 +603,7 @@
                 <div class="inner-box">
                     <div class="img_holder">
                         <a href="insight.html">
-                            <img src="../images/gallery/1.jpg" alt="images" class="img-responsive">
+                            <img src="../static/images/gallery/1.jpg" alt="static/images" class="img-responsive">
                         </a>
                     </div>
                     <div class="image-content text-center">
@@ -614,7 +619,7 @@
                 <div class="inner-box">
                     <div class="img_holder">
                         <a href="insight.html">
-                            <img src="../images/gallery/2.jpg" alt="images" class="img-responsive">
+                            <img src="../static/images/gallery/2.jpg" alt="static/images" class="img-responsive">
                         </a>
                     </div>
                     <div class="image-content text-center">
@@ -630,7 +635,7 @@
                 <div class="inner-box">
                     <div class="img_holder">
                         <a href="insight.html">
-                            <img src="../images/gallery/3.jpg" alt="images" class="img-responsive">
+                            <img src="../static/images/gallery/3.jpg" alt="static/images" class="img-responsive">
                         </a>
                     </div>
                     <div class="image-content text-center">
@@ -660,7 +665,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="team-member">
-                    <img src="../images/team/doctor-2.jpg" alt="doctor" class="img-responsive">
+                    <img src="../static/images/team/doctor-2.jpg" alt="doctor" class="img-responsive">
                     <div class="contents text-center">
                         <h4>Dr. Robert Barrethion</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
@@ -670,7 +675,7 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="team-member">
-                    <img src="../images/team/doctor-lab-3.jpg" alt="doctor" class="img-responsive">
+                    <img src="../static/images/team/doctor-lab-3.jpg" alt="doctor" class="img-responsive">
                     <div class="contents text-center">
                         <h4>Dr. Marry Lou</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
@@ -680,7 +685,7 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="team-member">
-                    <img src="../images/team/event-2.jpg" alt="doctor" class="img-responsive">
+                    <img src="../static/images/team/event-2.jpg" alt="doctor" class="img-responsive">
                     <div class="contents text-center">
                         <h4>Dr. Sansa Stark</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
@@ -694,7 +699,7 @@
 <!--End team section-->
 
 <!--testimonial-section-->
-<section class="testimonial-section" style="background: url(../images/testimonials/1.jpg);">
+<section class="testimonial-section" style="background: url(../static/images/testimonials/1.jpg);">
     <div class="container">
         <div class="section-title text-center">
             <h3>What Our
@@ -707,7 +712,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/1.png" alt="">
+                            <img src="../static/images/testimonials/1.png" alt="">
                         </figure>
                     </div>
                     <h6>Adam Rose</h6>
@@ -719,7 +724,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/2.png" alt="">
+                            <img src="../static/images/testimonials/2.png" alt="">
                         </figure>
                     </div>
                     <h6>David Warner</h6>
@@ -731,7 +736,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/3.png" alt="">
+                            <img src="../static/images/testimonials/3.png" alt="">
                         </figure>
                     </div>
                     <h6>Amy Adams</h6>
@@ -743,7 +748,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/1.png" alt="">
+                            <img src="../static/images/testimonials/1.png" alt="">
                         </figure>
                     </div>
                     <h6>Adam Rose</h6>
@@ -755,7 +760,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/2.png" alt="">
+                            <img src="../static/images/testimonials/2.png" alt="">
                         </figure>
                     </div>
                     <h6>David Warner</h6>
@@ -767,7 +772,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/3.png" alt="">
+                            <img src="../static/images/testimonials/3.png" alt="">
                         </figure>
                     </div>
                     <h6>Amy Adams</h6>
@@ -779,7 +784,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/1.png" alt="">
+                            <img src="../static/images/testimonials/1.png" alt="">
                         </figure>
                     </div>
                     <h6>Adam Rose</h6>
@@ -791,7 +796,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/2.png" alt="">
+                            <img src="../static/images/testimonials/2.png" alt="">
                         </figure>
                     </div>
                     <h6>David Warner</h6>
@@ -803,7 +808,7 @@
                 <div class="inner-box text-center">
                     <div class="image-box">
                         <figure>
-                            <img src="../images/testimonials/3.png" alt="">
+                            <img src="../static/images/testimonials/3.png" alt="">
                         </figure>
                     </div>
                     <h6>Amy Adams</h6>
@@ -966,7 +971,7 @@
             <div class="footer-logo">
               <figure>
                 <a href="index.html">
-                  <img src="../images/logo-2.png" alt="">
+                  <img src="../static/static/images/logo-2.png" alt="">
                 </a>
               </figure>
             </div>
@@ -1028,7 +1033,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object" src="../images/blog/post-thumb-small.jpg" alt="post-thumb">
+                      <img class="media-object" src="../static/images/blog/post-thumb-small.jpg" alt="post-thumb">
                     </a>
                   </div>
                   <div class="media-body">
@@ -1041,7 +1046,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object" src="../images/blog/post-thumb-small.jpg" alt="post-thumb">
+                      <img class="media-object" src="../static/images/blog/post-thumb-small.jpg" alt="post-thumb">
                     </a>
                   </div>
                   <div class="media-body">
@@ -1090,22 +1095,22 @@
   <span class="icon fa fa-angle-up"></span>
 </div>
 
-<script src="../plugins/jquery.js"></script>
-<script src="../plugins/bootstrap.min.js"></script>
-<script src="../plugins/bootstrap-select.min.js"></script>
+<script src="../static/plugins/jquery.js"></script>
+<script src="../static/plugins/bootstrap.min.js"></script>
+<script src="../static/plugins/bootstrap-select.min.js"></script>
 <!-- Slick Slider -->
-<script src="../plugins/slick/slick.min.js"></script>
+<script src="../static/plugins/slick/slick.min.js"></script>
 <!-- FancyBox -->
-<script src="../plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="../static/plugins/fancybox/jquery.fancybox.min.js"></script>
 <!-- Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-<script src="../plugins/google-map/gmap.js"></script>
+<script src="../static/plugins/google-map/gmap.js"></script>
 
-<script src="../plugins/validate.js"></script>
-<script src="../plugins/wow.js"></script>
-<script src="../plugins/jquery-ui.js"></script>
-<script src="../plugins/timePicker.js"></script>
-<script src="../js/script.js"></script>
+<script src="../static/plugins/validate.js"></script>
+<script src="../static/plugins/wow.js"></script>
+<script src="../static/plugins/jquery-ui.js"></script>
+<script src="../static/plugins/timePicker.js"></script>
+<script src="../static/js/script.js"></script>
 </body>
 
 </html>
