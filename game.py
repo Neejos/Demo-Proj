@@ -62,6 +62,8 @@ def update_score(score, high_score):
 	if score > high_score:
 		high_score = score
 	return high_score
+
+
 pygame.mixer.pre_init(frequency = 48000,size=-16,channels=1,buffer = 1024)
 pygame.init()
 # themesong = pygame.mixer.Sound('sound/themesong.wav')
@@ -105,6 +107,7 @@ corona_sound = pygame.mixer.Sound('sound/sfx_wing.wav')
 death_sound = pygame.mixer.Sound('sound/sfx_hit.wav')
 score_sound = pygame.mixer.Sound('sound/sfx_point.wav')
 score_sound_countdown = 100
+
 
 while True:
     #image of player 1
