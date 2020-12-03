@@ -831,3 +831,31 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1607015836510	Marionette	INFO	Listening on port 59890
 1607015836591	Marionette	WARN	TLS certificate errors will be ignored for this session
+1607018017280	Marionette	INFO	Stopped listening on port 59890
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607018038605	geckodriver	INFO	Listening on 127.0.0.1:61857
+1607018041642	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\neejo\\AppData\\Local\\Temp\\rust_mozprofileoYUIEV"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607018044732	Marionette	INFO	Listening on port 61871
+1607018044787	Marionette	WARN	TLS certificate errors will be ignored for this session
+1607018156279	Marionette	INFO	Stopped listening on port 61871
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607018165721	geckodriver	INFO	Listening on 127.0.0.1:62023
+1607018168765	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\neejo\\AppData\\Local\\Temp\\rust_mozprofileiu9UVw"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607018171471	Marionette	INFO	Listening on port 62032
+1607018171901	Marionette	WARN	TLS certificate errors will be ignored for this session
