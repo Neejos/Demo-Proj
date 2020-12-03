@@ -859,3 +859,20 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1607018171471	Marionette	INFO	Listening on port 62032
 1607018171901	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.worldometers.info/coronavirus//country/us/, line 5938: unreachable code after return statement
+JavaScript warning: https://www.worldometers.info/coronavirus//country/us/, line 5996: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1607021346006	geckodriver	INFO	Listening on 127.0.0.1:64855
+1607021349015	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\neejo\\AppData\\Local\\Temp\\rust_mozprofileZivDNi"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607021352461	Marionette	INFO	Listening on port 64868
+1607021352678	Marionette	WARN	TLS certificate errors will be ignored for this session
+1607021412801	geckodriver	INFO	Listening on 127.0.0.1:65073
+1607021415827	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\neejo\\AppData\\Local\\Temp\\rust_mozprofileCS3Gqi"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607021418961	Marionette	INFO	Listening on port 65082
+1607021419485	Marionette	WARN	TLS certificate errors will be ignored for this session
