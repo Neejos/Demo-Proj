@@ -11,13 +11,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <!-- Slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="../plugins/slick/slick.css">
+  <link rel="stylesheet" href="../plugins/slick/slick-theme.css">
   <!-- FancyBox -->
-  <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="../plugins/fancybox/jquery.fancybox.min.css">
   
   <!-- Stylesheets -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -79,7 +79,7 @@
             <div class="logo">
                   <figure>
                         <a href="index.html">
-                              <img src="images/logo.png" alt="">
+                              <img src="../images/logo.png" alt="">
                         </a>
                   </figure>
             </div>
@@ -136,7 +136,7 @@
                               <a href="about.html">About</a>
                         </li>
                         <li>
-                              <a href="service.html">Service</a>
+                              <a href="insight.html">Service</a>
                         </li>
                         <li>
                               <a href="gallery.html">Gallery</a>
@@ -186,107 +186,132 @@
 <!--End Main Header -->
 
 <!--Page Title-->
-<section class="page-title text-center" style="background-image:url(images/background/3.jpg);">
+<section class="page-title text-center" style="background-image:url(../images/background/3.jpg);">
     <div class="container">
         <div class="title-text">
-            <h1>Contact</h1>
+            <h1>appointment</h1>
             <ul class="title-menu clearfix">
                 <li>
                     <a href="index.html">home &nbsp;/</a>
                 </li>
-                <li>Contact</li>
+                <li>appointment</li>
             </ul>
         </div>
     </div>
 </section>
 <!--End Page Title-->
 
-<!--==================================
-=            Contact Form            =
-===================================-->
-<section class="section contact">
-    <!-- container start -->
+<!-- Contact Section -->
+<section class="blog-section section style-three pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <!-- address start -->
-                <div class="address-block">
-                    <!-- Location -->
-                    <div class="media">
-                        <i class="fa fa-map-o"></i>
-                        <div class="media-body">
-                            <h3>Location</h3>
-                            <p>PO Box 16122 Collins Street West
-                                <br>Victoria 8007 Canada</p>
-                        </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="contact-area style-two">
+                    <div class="section-title">
+                        <h3>Request <span>Appointment</span></h3>
                     </div>
-                    <!-- Phone -->
-                    <div class="media">
-                        <i class="fa fa-phone"></i>
-                        <div class="media-body">
-                            <h3>Phone</h3>
-                            <p>
-                                (+48) 564-334-21-22-34
-                                <br>(+48) 564-334-21-22-38
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Email -->
-                    <div class="media">
-                        <i class="fa fa-envelope-o"></i>
-                        <div class="media-body">
-                            <h3>Email</h3>
-                            <p>
-                                info@templatepath.com
-                                <br>info@cleanxer.com
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- address end -->
-            </div>
-            <div class="col-md-8">
-                <div class="contact-form">
-                    <!-- contact form start -->
-                    <form action="#" class="row">
-                        <!-- name -->
-                        <div class="col-md-6">
-                            <input type="text" name="name" class="form-control main" placeholder="Name" required>
-                        </div>
-                        <!-- email -->
-                        <div class="col-md-6">
-                            <input type="email" class="form-control main" placeholder="Email" required>
-                        </div>
-                        <!-- phone -->
-                        <div class="col-md-12">
-                            <input type="text" class="form-control main" placeholder="Phone" required>
-                        </div>
-                        <!-- message -->
-                        <div class="col-md-12">
-                            <textarea name="message" rows="15" class="form-control main" placeholder="Your message"></textarea>
-                        </div>
-                        <!-- submit button -->
-                        <div class="col-md-12 text-right">
-                            <button class="btn btn-style-one" type="submit">Send Message</button>
+                    <form name="contact_form" class="default-form contact-form" action="sendmail.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="Name" placeholder="Name" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="Email" placeholder="Email" required="">
+                                </div>
+                                <div class="form-group">
+                                    <select name="subject">
+                                        <option>Departments</option>
+                                        <option>Diagnostic</option>
+                                        <option>Psychological</option>
+                                    </select>
+                                </div>                            
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="Phone" placeholder="Phone" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Date" placeholder="Date" required="" id="datepicker">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div> 
+                                <div class="form-group">
+                                    <select name="subject">
+                                        <option>Doctor</option>
+                                        <option>Diagnostic</option>
+                                        <option>Psychological</option>
+                                    </select>
+                                </div>                            
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <textarea name="form_message" placeholder="Your Message" required=""></textarea>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn-style-one">submit now</button>
+                                </div>                            
+                            </div>
                         </div>
                     </form>
-                    <!-- contact form end -->
+                </div>                      
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="appointment-image-holder">
+                    <figure>
+                        <img src="../images/background/appoinment.jpg" alt="Appointment">
+                    </figure>
+                </div>                       
+            </div>
+        </div>                    
+    </div>
+</section>
+<!-- End Contact Section -->
+
+<!--team section-->
+<section class="team-section section">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Our Expert
+                <span>Doctors</span>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo, rerum 
+                <br>natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="team-member">
+                    <img src="../images/team/doctor-2.jpg" alt="doctor" class="img-responsive">
+                    <div class="contents text-center">
+                        <h4>Dr. Robert Barrethion</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
+                        <a href="#" class="btn btn-main">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="team-member">
+                    <img src="../images/team/doctor-lab-3.jpg" alt="doctor" class="img-responsive">
+                    <div class="contents text-center">
+                        <h4>Dr. Marry Lou</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
+                        <a href="#" class="btn btn-main">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="team-member">
+                    <img src="../images/team/event-2.jpg" alt="doctor" class="img-responsive">
+                    <div class="contents text-center">
+                        <h4>Dr. Sansa Stark</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
+                        <a href="#" class="btn btn-main">read more</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- container end -->
 </section>
-<!--====  End of Contact Form  ====-->
-
-<!--================================
-=            Google Map            =
-=================================-->
-<section class="map">
-    <!-- Google Map -->
-    <div id="map"></div>
-</section>
-<!--====  End of Google Map  ====-->
+<!--End team section-->
 
 <!--footer-main-->
 <footer class="footer-main">
@@ -298,7 +323,7 @@
             <div class="footer-logo">
               <figure>
                 <a href="index.html">
-                  <img src="images/logo-2.png" alt="">
+                  <img src="../images/logo-2.png" alt="">
                 </a>
               </figure>
             </div>
@@ -360,7 +385,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object" src="images/blog/post-thumb-small.jpg" alt="post-thumb">
+                      <img class="media-object" src="../images/blog/post-thumb-small.jpg" alt="post-thumb">
                     </a>
                   </div>
                   <div class="media-body">
@@ -373,7 +398,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object" src="images/blog/post-thumb-small.jpg" alt="post-thumb">
+                      <img class="media-object" src="../images/blog/post-thumb-small.jpg" alt="post-thumb">
                     </a>
                   </div>
                   <div class="media-body">
@@ -422,21 +447,21 @@
   <span class="icon fa fa-angle-up"></span>
 </div>
 
-<script src="plugins/jquery.js"></script>
-<script src="plugins/bootstrap.min.js"></script>
-<script src="plugins/bootstrap-select.min.js"></script>
+<script src="../plugins/jquery.js"></script>
+<script src="../plugins/bootstrap.min.js"></script>
+<script src="../plugins/bootstrap-select.min.js"></script>
 <!-- Slick Slider -->
-<script src="plugins/slick/slick.min.js"></script>
+<script src="../plugins/slick/slick.min.js"></script>
 <!-- FancyBox -->
-<script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="../plugins/fancybox/jquery.fancybox.min.js"></script>
 <!-- Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-<script src="plugins/google-map/gmap.js"></script>
+<script src="../plugins/google-map/gmap.js"></script>
 
-<script src="plugins/validate.js"></script>
-<script src="plugins/wow.js"></script>
-<script src="plugins/jquery-ui.js"></script>
-<script src="plugins/timePicker.js"></script>
+<script src="../plugins/validate.js"></script>
+<script src="../plugins/wow.js"></script>
+<script src="../plugins/jquery-ui.js"></script>
+<script src="../plugins/timePicker.js"></script>
 <script src="js/script.js"></script>
 </body>
 
