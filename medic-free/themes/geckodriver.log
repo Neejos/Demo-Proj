@@ -876,3 +876,8 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1607021418961	Marionette	INFO	Listening on port 65082
 1607021419485	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.worldometers.info/coronavirus//country/us/, line 5940: unreachable code after return statement
+JavaScript warning: https://www.worldometers.info/coronavirus//country/us/, line 5998: unreachable code after return statement
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript warning: https://www.worldometers.info/coronavirus//#countries/, line 22008: unreachable code after return statement
+JavaScript warning: https://www.worldometers.info/coronavirus//#countries/, line 22064: unreachable code after return statement
