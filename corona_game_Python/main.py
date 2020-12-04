@@ -16,15 +16,26 @@ class FormDetails(db.Model):
     __tablename__ = 'corona_user_data'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    email = db.Column(db.String())
-    phone = db.Column(db.Integer())
-    message = db.column(db.String())
-    BG = db.column(db.String())
-    CS = db.column(db.String())
-    Date = db.column(db.Date())
+    name = db.Column(db.String(), unique=True, nullable=False)
+    email = db.Column(db.String(), unique=True, nullable=False)
+    phone = db.Column(db.Integer(), nullable=False)
+    User_Message = db.Column(db.String(), nullable=False)
+    Blood_Group_Type = db.Column(db.String(), nullable=False)
+    Corona_Survivor_Details = db.Column(db.String(), nullable=False)
+    Date_of_registration = db.Column(db.Date(), nullable=False)
 
-
+    def __init__(self, name, email,phone,User_Message,Blood_Group_Type,Corona_Survivor_Details,Date_of_registration):
+        self.name = name
+        self.email = email
+        self.phone = phone
+        self.User_Message = User_Message
+        self.Blood_Group_Type = Blood_Group_Type
+        self.Corona_Survivor_Details = Corona_Survivor_Details
+        self.Date_of_registration = Date_of_registration
+        self.id = id
+           
+    # def __repr__(self):
+    #     return f"<Car {self.name}>"
 
     # def __repr__(self):
     #     return f"<Name {self.name}>"
@@ -48,29 +59,37 @@ def home():
         CS = request.form['Corona Survivor(Yes/No)']
         message = request.form['form_message']
         print(name,email,phone,date,message,BG,CS,message)
+        # if request.is_json:
+        #     data = request.get_json()
+        new_data = FormDetails(name=name, email=email,phone=phone,Date_of_registration=date,Blood_Group_Type=BG,Corona_Survivor_Details=CS,User_Message=message)
+        db.session.add(new_data)
+        db.session.commit()
+        return {"message": f"car {new_data.name} has been created successfully."}
+        # else:
+        #     return {"Unsuccessfull!!"}
 
-    def __init__(self, name, email,phone,message,BG,CS,Date):
-        self.name = name
-        self.email = email
-        self.phone = phone
-        self.message = message
-        self.BG = BG
-        self.CS = CS
-        self.Date = Date
-        self.id = id
-    def __repr__(self):
-        return f"<Car {self.name}>"
+    # elif request.method == 'GET':
+    #     user_details = FormDetails.query.all()
+    #     results = [
+    #         {
+    #             "name": user_detail.name,
+    #             "email": user_detail.email,
+    #         } for user_detail in user_details]
+
+    #     return {"count": len(results), "User Data": results}
+
+
 
     
 
     if form.validate():
         # Save the comment here.
-        flash('Hello ' + name)
+        flash('Thanks for registration ' + name)
     else:
         flash('All the form fields are required. ')
     
     # return render_template('hello.html', form=form)
-    return render_template('index.html')
+    return render_template('index.html',form=form)
 
 @app.route("/about")
 def about():
@@ -98,4 +117,5 @@ def submit():
 if __name__ == "__main__":
     app.run(debug=True)
 
-
+# $ export FLASK_APP=app.py
+# $ flask run
