@@ -5,7 +5,7 @@ from flask import Flask, render_template,redirect,request
 # Create an instance of Flask app
 app= Flask(__name__)
 
-@app.route("/")
+@app.route("/home")
 def home():
     return render_template('index.html')
 

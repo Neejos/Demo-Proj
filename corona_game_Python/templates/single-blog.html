@@ -11,13 +11,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <!-- Slick Carousel -->
-  <link rel="stylesheet" href="../plugins/slick/slick.css">
-  <link rel="stylesheet" href="../plugins/slick/slick-theme.css">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/plugins/slick/slick.css') }}">
+  <!-- <link rel="stylesheet" href="../static/plugins/slick/slick.css"> -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/plugins/slick/slick-theme.css') }}">
+  <!-- <link rel="stylesheet" href="../static/plugins/slick/slick-theme.css"> -->
   <!-- FancyBox -->
-  <link rel="stylesheet" href="../plugins/fancybox/jquery.fancybox.min.css">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/plugins/fancybox/jquery.fancybox.min.css') }}">
+  <!-- <link rel="stylesheet" href="../static/plugins/fancybox/jquery.fancybox.min.css"> -->
   
   <!-- Stylesheets -->
-  <link href="../css/style.css" rel="stylesheet">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/style.css') }}">
+  <!-- <link href="../static/css/style.css" rel="stylesheet"> -->
   
   <!--Favicon-->
   <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
@@ -136,7 +140,7 @@
                               <a href="about.html">About</a>
                         </li>
                         <li>
-                              <a href="insight.html">Service</a>
+                              <a href="insight.html">Insight</a>
                         </li>
                         <li>
                               <a href="gallery.html">Gallery</a>
