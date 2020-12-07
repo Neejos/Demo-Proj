@@ -105,30 +105,26 @@ def post_user():
     db.session.commit()
     return redirect(url_for('home'))
 
-@app.route("/submit.html,methods=['GET','POST']")
+@app.route("/submit.html",methods=['POST'])
 def sign_user():
     message = ''
+    print("in sign_user")
+    print(request.method)
     if request.method == 'POST':
+
         username = request.form.get('Name')  # access the data inside 
-        email = request.form.get('Email')
-        # query = FormDetails.filter(FormDetails.name==(username),FormDetails.email==(POST_email))
-        # results = FormDetails.query.all()
-        users = FormDetails.query.all()
-        results = [
-            {
-                "name": user.name,
-                "email": user.email,
-            } for user in users]
-        for result in results:
-            if username == result['name'] and email == result['email']:
-                message = "Correct username and password"
-                return render_template('submit.html',message=message)
-            else:
-                message = "Wrong username or password"
-                return render_template('index.html',message=message)
+        email_form = request.form.get('Email')
 
+        lst = FormDetails.query.filter(FormDetails.name==username).filter(FormDetails.email == email_form).all()
+        if not lst:
+            # return redirect(url_for('appointment'))
+            flash("Wrong username or password")
+            return render_template('appointment.html') 
+        else:
+            print(lst)
+            message = "Correct username and password"
+            return render_template('submit.html',message=message)
 
-    # return redirect(url_for('home'))
     
     
 
