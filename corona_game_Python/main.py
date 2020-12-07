@@ -125,10 +125,6 @@ def sign_user():
             message = "Correct username and password"
             return render_template('submit.html',message=message)
 
-    
-    
-
-
 @app.route("/appointment")
 def appointment():
   
