@@ -167,6 +167,16 @@ def remedies():
 def remedies1():
     
     return render_template('remedies1.html')
+
+@app.route("/fitness1")
+def fitness1():
+    
+    return render_template('fitness1.html')
+
+@app.route("/fitness2")
+def fitness2():
+    
+    return render_template('fitness2.html')
 # @app.route("/home")
 # def Session():
 #     import game
