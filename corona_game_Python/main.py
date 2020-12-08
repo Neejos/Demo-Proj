@@ -163,10 +163,26 @@ def remedies():
     
     return render_template('remedies.html')
 
-@app.route("/remedies1")
-def remedies1():
+@app.route("/diabetes")
+def diabetes():
     
-    return render_template('remedies1.html')
+    return render_template('diabetes.html')
+@app.route("/hangover")
+def hangover():
+    
+    return render_template('hangover.html')
+
+@app.route("/stress")
+def stress():
+    
+    return render_template('stress.html')
+    
+@app.route("/officestress")
+def officestress():
+    
+    return render_template('officestress.html')
+
+
 # @app.route("/home")
 # def Session():
 #     import game
