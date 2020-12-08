@@ -24,9 +24,12 @@
   <!-- <link href="../static/css/style.css" rel="stylesheet"> -->
   
   <!--Favicon-->
-  <!-- <link rel= "stylesheet" type= "image/x-icon" href= "{{ url_for('static',filename='../static/css/style.css') }}">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
 
 </head>
 
@@ -111,7 +114,8 @@
                         </li>
                   </ul>
                   <div class="link-btn">
-                        <a href="#" class="btn-style-one">SIGNIN</a>
+                        <!-- <a href="#" class="btn-style-one">SIGNIN</a> -->
+                        <input type=button onClick="parent.location='appointment'" value='Sign out' class="btn-style-one">
                   </div>
             </div>
       </div>
@@ -136,29 +140,30 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
                         <li class="active">
-                              <a href="/">Home</a>
+                              <a href="profile">Profile</a>
                         </li>
                         <li>
                               <a href="about">About</a>
                         </li>
                         <li>
                               <a href="insight">Insight</a>
-                        </li> -->
-                        <li>
-                              <a href="gallery">Gallery</a>
                         </li>
                         <li>
-                              <a href="team">Team</a>
+                              <a href="fitness">Fitness Tutorials</a>
                         </li>
                         <li>
-                              <a href="appointment">SIGNIN</a>
+                              <a href="remedies">Home Remedies</a>
+                        </li>
+                        <li>
+                              <a href="Chat">Chat</a>
                         </li>
                         <li>
                               <a href="blog">Blog</a>
                         </li>
                         <li>
                               <a href="contact">Contact</a>
-                        </li> -->
+                        </li>
+                       
                         <!-- <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
                                     <span class="caret"></span>
@@ -191,789 +196,204 @@
 </nav>
 <!--End Main Header -->
 
-<!--=================================
-=            Page Slider            =
-==================================-->
-<div class="hero-slider">
-    <!-- Slider Item -->
-    <div class="slider-item slide1" style="background-image:url(../static/images/slider/slider-bg-1-COVID-19.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Slide Content Start -->
-                    <div class="content style text-center">
-                        <h2 class="text-white text-bold mb-2">Covid-19</h2>
-                        <p class="tag-text mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. <br>
-                             Quis quos officiis numquam!</p>
-                        <a href="#" class="btn btn-main btn-white">explore</a>
+<!--Page Title-->
+
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img id="idcardfront" src="images/UploadImgPlaceholder.png" data-type="editable" />
+
+                    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/> -->
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file"/>
                     </div>
-                    <!-- Slide Content End -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                {{username}}
+                            </h5>
+                            <h6>
+                                {{email_form}}
+                            </h6>
+                            <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>WORK LINK</p>
+                    <a href="">Website Link</a><br/>
+                    <a href="">Bootsnipp Profile</a><br/>
+                    <a href="">Bootply Profile</a>
+                    <p>SKILLS</p>
+                    <a href="">Web Designer</a><br/>
+                    <a href="">Web Developer</a><br/>
+                    <a href="">WordPress</a><br/>
+                    <a href="">WooCommerce</a><br/>
+                    <a href="">PHP, .Net</a><br/>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{username}}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{email_form}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Blood Group</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>123 456 7890</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Corona Survivor</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Web Developer and Designer</p>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone No.</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Web Developer and Designer</p>
+                                    </div>
+                                    
+                                </div>
+                    <!-- </div> -->
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Experience</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Hourly Rate</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>10$/hr</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Total Projects</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>230</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>English Level</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Availability</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>6 months</p>
+                                    </div>
+                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Your Bio</label><br/>
+                                <p>Your detail description</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Slider Item -->
-    <div class="slider-item" style="background-image:url(../static/images/slider/slider-bg-2-Food.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Slide Content Start-->
-                    <div class="content style text-right">
-                        <h2 class="text-white">Boost your immunity: <br>Your Health</h2>
-                        <p class="tag-text">How eating healthy can protect your body from COVID-19 and chronic disease </p>
-                        <a href="#" class="btn btn-main btn-white">Read more</a>
-                    </div>
-                    <!-- Slide Content End-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Slider Item -->
-    <div class="slider-item" style="background-image:url(../static/images/slider/slider-bg-3-Good-Hygiene_new.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Slide Content Start -->
-                    <div class="content text-center style">
-                        <h2 class="text-white text-bold mb-2">Good hygiene</h2>
-                        <p class="tag-text mb-5">During the Coronavirus Disease 19 (COVID-19) pandemic, keeping hands clean is especially important to help prevent the virus from spreading.</p>
-                        <a href="shop" class="btn btn-main btn-white">shop now</a>
-                    </div>
-                    <!-- Slide Content End -->
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>           
 </div>
-
-<!--====  End of Page Slider  ====-->
-
-<section class="cta">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="cta-block">
-                    <div class="emmergency item">
-                        <i class="fa fa-phone"></i>
-                        <h2>Emegency Cases</h2>
-                        <a href="#">1-800-700-6200</a>
-                        <p>YOUR RESPONSIBILTY TO BE READY FOR THE FIGHT NEVER ENDS.</p>
-                    </div>
-                    <div class="top-doctor item">
-                        <i class="fa fa-stethoscope"></i>
-                        <h2>24 Hour Service</h2>
-                        <p>Don't think about what can happen in a month. Don't think about what can happen in a year. Just focus on the 24 hours in front of you and do what you can to get closer to where you want to be.</p>
-                        <a href="#" class="btn btn-main">Read more</a>
-                    </div>
-                    <div class="working-time item">
-                        <i class="fa fa-hourglass-o"></i>
-                        <h2>Working Hours</h2>
-                        <ul class="w-hours">
-                            <li>Mon - Fri  - <span>8:00 - 17:00</span></li>
-                            <li>Mon - Fri  - <span>8:00 - 17:00</span></li>
-                            <li>Mon - Fri  - <span>8:00 - 17:00</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--about section-->
-<section class="feature-section section bg-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-xs-12">
-				<div class="image-content">
-					<div class="section-title text-center">
-						<h3>Best Features
-							<span>of Our Website</span>
-						</h3>
-                        <p>A place where you can relax your mind amidst the covid situation.<br>
-                            If you are a corona Survivor then you can share your experience with other memebers here,chat with them<br>
-                            You can try some home remedies provided by us to boost your immunity</p>
-					</div>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="item">
-								<div class="icon-box">
-									<figure>
-										<a href="#">
-											<img src="../static/images/resource/1.png" alt="">
-										</a>
-									</figure>
-								</div>
-								<h6>Fitness Tutorials</h6>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur ex sunt, est aspernatur 
-									at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="item">
-								<div class="icon-box">
-									<figure>
-										<a href="#">
-											<img src="../static/images/resource/2.png" alt="">
-										</a>
-									</figure>
-								</div>
-								<h6>Home Remedies</h6>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur ex sunt, est aspernatur
-								at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="item">
-								<div class="icon-box">
-									<figure>
-										<a href="#">
-											<img src="../static/images/resource/3.png" alt="">
-										</a>
-									</figure>
-								</div>
-								<h6>Current corona situation</h6>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur ex sunt, est aspernatur
-								at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="item">
-								<div class="icon-box">
-									<figure>
-										<a href="#">
-											<img src="../static/images/resource/4.png" alt="">
-										</a>
-									</figure>
-								</div>
-								<h6>Chat with Corona Survivors</h6>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ducimus veniam illo quibusdam pariatur ex sunt, est aspernatur
-								at debitis eius vitae vel nostrum dolorem labore autem corrupti odit mollitia?</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--End about section-->
-
-<!--Start about us area-->
-<section class="service-tab-section section">
-    <div class="outer-box clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Nav tabs -->
-                    <div class="tabs">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#dormitory"  data-toggle="tab">prologue</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#orthopedic" data-toggle="tab">orthopedic</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#sonogram" data-toggle="tab">sonogram</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#x-ray" data-toggle="tab">x-ray</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#diagnostic" data-toggle="tab">diagnostic</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Start single tab content-->
-                    <div class="tab-content">
-                        <div class="service-box tab-pane fade in active row" id="dormitory">
-                            <div class="col-md-6">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/78jLBNSqc3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <!-- <img class="img-responsive" src="../static/images/services/service-one.jpg" alt="service-image"> -->
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contents">
-                                    <div class="section-title">
-                                        <h3>A Quick Primer on Corona Virus</h3>
-                                    </div>
-                                    <div class="text">
-                                        <p>In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months it spread to other countries, with cases doubling within days. This virus is the “Severe acute respiratory syndrome-related coronavirus 2”, that causes the disease called COVID19, and that everyone simply calls Coronavirus.
-
-                                        </p>
-                                        <p>This video shows how COVID-19 is believed to be transmitted while educating the public on the symptoms that may be caused by COVID-19. What actually happens when it infects a human and what should we all do?</p>
-                                    </div>
-                                    <!-- <ul class="content-list"> 
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Whitening is among the most popular dental</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                    </ul> -->
-                                    <a href="#" class="btn btn-style-one">Read more</a>
-                                </div>
-                            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="right-side">
+                    <!-- <div class="text-title">
+                        <h6>Search</h6>
+                    </div> -->
+                    <!-- <div class="search-box">
+                        <form method="post" action="index.html">
+                            <input type="search" name="search" placeholder="Enter to Search" required="">
+                        </form>
+                    </div> -->
+                    <!-- <div class="categorise-menu">
+                        <div class="text-title">
+                            <h6>Categories</h6>
                         </div>
-                        <!--End single tab content-->
-                        <!--Start single tab content-->
-                        <div class="service-box tab-pane fade in" id="orthopedic">
-                            <div class="col-md-6">
-                                <img class="img-responsive" src="../static/images/services/service-two.jpg" alt="service-image">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contents">
-                                    <div class="section-title">
-                                        <h3>orthopedic</h3>
-                                    </div>
-                                    <div class="text">
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                    </div>
-                                    <ul class="content-list">
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Whitening is among the most popular dental</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-style-one">Read more</a>
-                                </div>
-                            </div>
+                        <ul class="categorise-list">
+                            <li><a href="diabetes">Diabetes <span>(20)</span></a></li>
+                            <li><a href="hangover">Hangover <span>(4)</span></a></li>
+                            <li><a href="#">Sonogram <span>(2)</span></a></li>
+                            <li><a href="#">x-ray <span>(9)</span></a></li>
+                            <li><a href="#">Dental <span>(2)</span></a></li>
+                        </ul>                           
+                    </div> -->
+                    <!-- <div class="tag-list">
+                        <div class="text-title">
+                            <h6>Tags</h6>
                         </div>
-                        <!--End single tab content-->
-                        <!--Start single tab content-->
-                        <div class="service-box tab-pane fade in" id="sonogram">
-                            <div class="col-md-6">
-                                <img class="img-responsive" src="../static/images/services/service-three.jpg" alt="service-image">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contents">
-                                    <div class="section-title">
-                                        <h3>sonogram</h3>
-                                    </div>
-                                    <div class="text">
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                    </div>
-                                    <ul class="content-list">
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Whitening is among the most popular dental</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-style-one">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single tab content-->
-                        <!--Start single tab content-->
-                        <div class="service-box tab-pane fade in" id="x-ray">
-                            <div class="col-md-6">
-                                <img class="img-responsive" src="../static/images/services/service-four.jpg" alt="service-image">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contents">
-                                    <div class="section-title">
-                                        <h3>x-ray</h3>
-                                    </div>
-                                    <div class="text">
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                    </div>
-                                    <ul class="content-list">
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Whitening is among the most popular dental</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-style-one">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single tab content-->
-                        <!--Start single tab content-->
-                        <div class="service-box tab-pane fade in" id="diagnostic">
-                            <div class="col-md-6">
-                                <img class="img-responsive" src="../static/images/services/service-five.jpg" alt="service-image">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contents">
-                                    <div class="section-title">
-                                        <h3>diagnostic</h3>
-                                    </div>
-                                    <div class="text">
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                        <p>The implant fixture is first placed, so that it ilikely to osseointegrate, then a dental prosthetic is added.
-                                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
-                                    </div>
-                                    <ul class="content-list">
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Whitening is among the most popular dental</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                        <li>
-                                            <i class="fa fa-dot-circle-o"></i>Teeth cleaning is part of oral hygiene and involves</li>
-                                    </ul>
-                                    <a href="#" class="btn btn-style-one">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End single tab content-->
-                    </div>
+                        <a href="diabetes">Diabetes</a><a href="officestress">Office Stress</a>
+                        <a href="hangover">Hangover</a><a href="#">hospitality</a>
+                        <a href="stress">Relief from stress and pain</a>
+                        <a href="#">Medical</a>
+                        <a href="#">hospitality</a>
+                    </div> -->
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!--End about us area-->
-
-<!--Service Section-->
-<section class="service-section bg-gray section">
-    <div class="container">
-        <div class="section-title text-center">
-            <h3>Provided
-                <span>Services</span>
-            </h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. qui suscipit atque <br>
-                fugiat officia corporis rerum eaque neque totam animi, sapiente culpa. Architecto!</p>
-        </div>
-        <div class="row items-container clearfix">
-            <div class="item">
-                <div class="inner-box">
-                    <div class="img_holder">
-                        <a href="insight.html">
-                            <img src="../static/images/gallery/1.jpg" alt="static/images" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="image-content text-center">
-                        <span>Better Service At Low Cost</span>
-                        <a href="insight.html">
-                            <h6>Dormitory</h6>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="inner-box">
-                    <div class="img_holder">
-                        <a href="insight.html">
-                            <img src="../static/images/gallery/2.jpg" alt="static/images" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="image-content text-center">
-                        <span>Better Service At Low Cost</span>
-                        <a href="insight.html">
-                            <h6>Germs Protection</h6>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="inner-box">
-                    <div class="img_holder">
-                        <a href="insight.html">
-                            <img src="../static/images/gallery/3.jpg" alt="static/images" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="image-content text-center">
-                        <span>Better Service At Low Cost</span>
-                        <a href="insight.html">
-                            <h6>Psycology</h6>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="inner-box">
-                    <div class="img_holder">
-                        <a href="insight.html">
-                            <img src="../static/images/gallery/1.jpg" alt="static/images" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="image-content text-center">
-                        <span>Better Service At Low Cost</span>
-                        <a href="insight.html">
-                            <h6>Dormitory</h6>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="inner-box">
-                    <div class="img_holder">
-                        <a href="insight.html">
-                            <img src="../static/images/gallery/2.jpg" alt="static/images" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="image-content text-center">
-                        <span>Better Service At Low Cost</span>
-                        <a href="insight.html">
-                            <h6>Germs Protection</h6>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="inner-box">
-                    <div class="img_holder">
-                        <a href="insight.html">
-                            <img src="../static/images/gallery/3.jpg" alt="static/images" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="image-content text-center">
-                        <span>Better Service At Low Cost</span>
-                        <a href="insight.html">
-                            <h6>Psycology</h6>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End Service Section-->
-
-<!--team section-->
-<section class="team-section section">
-    <div class="container">
-        <div class="section-title text-center">
-            <h3>Our Expert
-                <span>Doctors</span>
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo, rerum 
-                <br>natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="team-member">
-                    <img src="../static/images/team/doctor-2.jpg" alt="doctor" class="img-responsive">
-                    <div class="contents text-center">
-                        <h4>Dr. Robert Barrethion</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
-                        <a href="#" class="btn btn-main">read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="team-member">
-                    <img src="../static/images/team/doctor-lab-3.jpg" alt="doctor" class="img-responsive">
-                    <div class="contents text-center">
-                        <h4>Dr. Marry Lou</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
-                        <a href="#" class="btn btn-main">read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="team-member">
-                    <img src="../static/images/team/event-2.jpg" alt="doctor" class="img-responsive">
-                    <div class="contents text-center">
-                        <h4>Dr. Sansa Stark</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
-                        <a href="#" class="btn btn-main">read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End team section-->
-
-<!--testimonial-section-->
-<section class="testimonial-section" style="background: url(../static/images/testimonials/1.jpg);">
-    <div class="container">
-        <div class="section-title text-center">
-            <h3>What Our
-                <span>Patients Says</span>
-            </h3>
-        </div>
-        <div class="testimonial-carousel">
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/1.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>Adam Rose</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/2.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>David Warner</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/3.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>Amy Adams</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/1.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>Adam Rose</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/2.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>David Warner</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/3.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>Amy Adams</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/1.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>Adam Rose</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/2.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>David Warner</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-            <!--Slide Item-->
-            <div class="slide-item">
-                <div class="inner-box text-center">
-                    <div class="image-box">
-                        <figure>
-                            <img src="../static/images/testimonials/3.png" alt="">
-                        </figure>
-                    </div>
-                    <h6>Amy Adams</h6>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End testimonial-section-->
-
-<!-- Contact Section -->
-<section class="appoinment-section section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="accordion-section">
-    <div class="section-title">
-        <h3>FAQ</h3>
-    </div>
-    <div class="accordion-holder">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Why Should I choose Medical Health
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
-                        heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                            What are the Centre’s visiting hours?
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
-                        heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                    <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                            aria-controls="collapseThree">
-                            How many visitors are allowed?
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
-                        heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="contact-area">
-    <div class="section-title">
-        <!-- <h3>Request -->
-            <h3>Register Now!
-        </h3>
-    </div>
-    <form name="contact_form" action = "/post_user" class="default-form contact-form" method="POST">
-    <!-- <form name="contact_form" class="default-form contact-form" action="sendmail.php" method="post"> -->
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="form-group">
-                    <input type="text" name="Name" placeholder="Name" required="">
-                </div>
-                <div class="form-group">
-                    <input type="email" name="Email" placeholder="Email" required="">
-                </div>
-                <!-- <div class="form-group">
-                    <select name="subject">
-                        <option>Departments</option>
-                        <option>Diagnostic</option>
-                        <option>Psychological</option>
-                    </select>
-                </div> -->
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="form-group">
-                    <input type="text" name="Phone" placeholder="Phone" required="">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="Date" placeholder="Date" required="" id="datepicker">
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                </div>
-            </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-group">
-                        <input type="text" name="Blood Group" placeholder="Blood Group" required="">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="Corona Survivor(Yes/No)" placeholder="Corona Survivor(Yes/No)" required="">
-                    </div>
-
-
-                <!-- <div class="form-group">
-                    <select name="subject">
-                        <option>Doctor</option>
-                        <option>Diagnostic</option>
-                        <option>Psychological</option>
-                    </select>
-                </div> -->
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="form-group">
-                    <textarea name="form_message" placeholder="Your Message" required=""></textarea>
-                </div>
-                <div class="form-group text-center">
-                    <button type="submit" class="btn-style-one"  >submit now</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-
-{% for message in messages %}
-{% if "Error" not in message[1]: %}
-<div class="alert alert-info">
-    <strong>You are Successfully Registered! EX</strong> { { message[1] }}</div>
-{% endif %}
-
-{% if "Error" in message[1]: %}
-<div class="alert alert-warning">
-    { { message[1] }}</div>
-{% endif %}
-{% endfor %}
-{% endif %}
-{% endwith %}
-</div>                        
-            </div>
-        </div>                    
+        </div>                
+        <div class="styled-pagination">
+            <ul>
+                <li><a class="prev" href="#"><span class="fa fa-angle-left" aria-hidden="true"></span></a></li>
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a class="next" href="#"><span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+            </ul>
+        </div>                  
     </div>
 </section>
 <!-- End Contact Section -->
@@ -988,7 +408,7 @@
             <div class="footer-logo">
               <figure>
                 <a href="index.html">
-                  <img src="../static/logo-2.png" alt="">
+                  <img src="../images/logo-2.png" alt="">
                 </a>
               </figure>
             </div>
@@ -997,8 +417,8 @@
               <li class="item">
                 <i class="fa fa-map-marker"></i>
                 <p>Modamba, NY 80021, United States</p>
-              </li>
-              <li class="item">
+              </li> -->
+              <!-- <li class="item">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <a href="#">
                   <p>Support@medic.com</p>
@@ -1006,9 +426,9 @@
               </li>
               <li class="item">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <p>(4400) +123 4567</p>
+                <p>(88017) +123 4567</p>
               </li>
-            </ul> -->
+            </ul> --> 
             <ul class="list-inline social-icons">
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -1021,56 +441,56 @@
           <h6>Services</h6>
           <ul class="menu-link">
             <li>
-                <a href="#">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>FITNESS TUTORIALS</a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>HOME REMEDIES</a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>CURRENT CORONA SITUATION</a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>CHAT WITH CORONA SURVIVORS</a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>ACCESS TO CORONA HIT GAME</a>
-              </li>
+              <a href="#">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>FITNESS TUTORIALS</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>HOME REMEDIES</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>CURRENT CORONA SITUATION</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>CHAT WITH CORONA SURVIVORS</a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>Access to Corona Hit game</a>
+            </li>
           </ul>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="social-links">
-                <h6>Creators</h6>
-                <ul>
-                  <li class="item">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="#">
-                          <img class="media-object" src="../static/images/blog/post-thumb-small.jpg" alt="post-thumb">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="https://www.linkedin.com/in/himani-dhawan/">Connect with Himani Dhawan</a></h4>
-                        <p>Hope is the thing with feathers that perches in the soul and sings the tune without words and never stops at all.</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div class="media">
-                      <div class="media-left">
-                        <a href="#">
-                          <img class="media-object" src="../static/images/blog/profile.jpg" style="width: 80px;height: 80px;" alt="post-thumb">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <h4 class="media-heading">
-                          <a href="https://www.linkedin.com/in/neethu-john-4643331b8/">Connect with Neethu John</a>
-                        </h4>
-                        <p>It is not the strongest of the species that survives,Nor the most intelligent ones.It is the one that is most adaptable to the change.</p>
+          <div class="social-links">
+            <h6>Creators</h6>
+            <ul>
+              <li class="item">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object" src="../static/images/blog/post-thumb-small.jpg" alt="post-thumb">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading"><a href="https://www.linkedin.com/in/himani-dhawan/">Connect with Himani Dhawan</a></h4>
+                    <p>Hope is the thing with feathers that perches in the soul and sings the tune without words and never stops at all.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="item">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object" src="../static/images/blog/profile.jpg" style="width: 80px;height: 80px;" alt="post-thumb">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">
+                      <a href="https://www.linkedin.com/in/neethu-john-4643331b8/">Connect with Neethu John</a>
+                    </h4>
+                    <p>It is not the strongest of the species that survives,Nor the most intelligent ones.It is the one that is most adaptable to the change.</p>
                   </div>
                 </div>
               </li>
@@ -1083,19 +503,19 @@
   <div class="footer-bottom">
     <div class="container clearfix">
       <div class="copyright-text">
-        <p>&copy; Copyright 2018. All Rights Reserved by
-          <a href="index.html">Medic</a>
-        </p>
+        <!-- <p>&copy; Copyright 2018. All Rights Reserved by -->
+          <!-- <a href="index.html">Medic</a>
+        </p> -->
       </div>
       <ul class="footer-bottom-link">
         <li>
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
-          <a href="about.html">About</a>
+          <a href="about">About</a>
         </li>
         <li>
-          <a href="contact.html">Contact</a>
+          <a href="contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -1112,22 +532,29 @@
   <span class="icon fa fa-angle-up"></span>
 </div>
 
-<script src="../static/plugins/jquery.js"></script>
-<script src="../static/plugins/bootstrap.min.js"></script>
-<script src="../static/plugins/bootstrap-select.min.js"></script>
+<script src="../plugins/jquery.js"></script>
+<script src="../plugins/bootstrap.min.js"></script>
+<script src="../plugins/bootstrap-select.min.js"></script>
 <!-- Slick Slider -->
-<script src="../static/plugins/slick/slick.min.js"></script>
+<script src="../plugins/slick/slick.min.js"></script>
 <!-- FancyBox -->
-<script src="../static/plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="../plugins/fancybox/jquery.fancybox.min.js"></script>
 <!-- Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-<script src="../static/plugins/google-map/gmap.js"></script>
+<script src="../plugins/google-map/gmap.js"></script>
 
-<script src="../static/plugins/validate.js"></script>
-<script src="../static/plugins/wow.js"></script>
-<script src="../static/plugins/jquery-ui.js"></script>
-<script src="../static/plugins/timePicker.js"></script>
-<script src="../static/js/script.js"></script>
+<script src="../plugins/validate.js"></script>
+<script src="../plugins/wow.js"></script>
+<script src="../plugins/jquery-ui.js"></script>
+<script src="../plugins/timePicker.js"></script>
+<script src="js/script.js"></script>
+
+<script src="/static/js/jquery-3.1.1.js"></script>
+<script src="/static/js/jquery.ui.widget.js"></script>
+  
+<script type="text/javascript" src="/static/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="/static/js/jquery.fileupload-process.js"></script>
+<script type="text/javascript" src="/static/js/jquery.fileupload-ui.js"></script>
 </body>
 
 </html>
