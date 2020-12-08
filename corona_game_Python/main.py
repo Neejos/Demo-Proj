@@ -106,7 +106,7 @@ def post_user():
     db.session.commit()
     return redirect(url_for('home'))
 
-@app.route("/submit.html",methods=['POST'])
+@app.route("/profile.html",methods=['POST'])
 def sign_user():
     message = ''
     print("in sign_user")
@@ -115,6 +115,7 @@ def sign_user():
 
         username = request.form.get('Name')  # access the data inside 
         email_form = request.form.get('Email')
+        
 
         lst = FormDetails.query.filter(FormDetails.name==username).filter(FormDetails.email == email_form).all()
         if not lst:
@@ -124,7 +125,8 @@ def sign_user():
         else:
             print(lst)
             message = "Correct username and password"
-            return render_template('submit.html',message=message)
+            # Corona_Survivor = FormDetails.query.filter(FormDetails.name==username)..filter(FormDetails.email == email_form).
+            return render_template('profile.html',message=message,username=username,email_form=email_form)
 
 @app.route("/appointment")
 def appointment():
@@ -157,14 +159,28 @@ def contact():
 def blog():
     
     return render_template('blog.html')
+    
+@app.route("/profile")
+def profile():
+    
+    return render_template('profile.html')
 
 @app.route("/remedies")
 def remedies():
     
     return render_template('remedies.html')
 
-@app.route("/remedies1")
-def remedies1():
+@app.route("/diabetes")
+def diabetes():
+    
+    return render_template('diabetes.html')
+@app.route("/hangover")
+def hangover():
+    
+    return render_template('hangover.html')
+
+@app.route("/stress")
+def stress():
     
     return render_template('remedies1.html')
 
@@ -177,6 +193,18 @@ def fitness1():
 def fitness2():
     
     return render_template('fitness2.html')
+    return render_template('stress.html')
+    
+@app.route("/officestress")
+def officestress():
+    
+    return render_template('officestress.html')
+@app.route("/immunitysyrup")
+def immunitysyrup():
+    
+    return render_template('immunitysyrup.html')
+
+
 # @app.route("/home")
 # def Session():
 #     import game
