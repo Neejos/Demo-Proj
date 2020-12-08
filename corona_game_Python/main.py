@@ -182,7 +182,7 @@ def hangover():
 @app.route("/stress")
 def stress():
     
-    return render_template('remedies1.html')
+    return render_template('stress.html')
 
 @app.route("/fitness1")
 def fitness1():
@@ -193,7 +193,7 @@ def fitness1():
 def fitness2():
     
     return render_template('fitness2.html')
-    return render_template('stress.html')
+
     
 @app.route("/officestress")
 def officestress():
