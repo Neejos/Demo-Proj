@@ -2,6 +2,7 @@ from flask import Flask, render_template,redirect,request,flash,url_for
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+
 # from flex import app,event,ui
 # app.init()
 # Create an instance of Flask app
