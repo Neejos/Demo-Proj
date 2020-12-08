@@ -163,6 +163,10 @@ def remedies():
     
     return render_template('remedies.html')
 
+@app.route("/remedies1")
+def remedies1():
+    
+    return render_template('remedies1.html')
 # @app.route("/home")
 # def Session():
 #     import game
