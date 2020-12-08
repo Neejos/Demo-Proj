@@ -147,6 +147,21 @@ def submit():
     
     return render_template('submit.html')
 
+@app.route("/contact")
+def contact():
+    
+    return render_template('contact.html')
+
+@app.route("/blog")
+def blog():
+    
+    return render_template('blog.html')
+
+@app.route("/remedies")
+def remedies():
+    
+    return render_template('remedies.html')
+
 # @app.route("/home")
 # def Session():
 #     import game
