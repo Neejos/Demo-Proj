@@ -142,7 +142,6 @@ def appointment():
     # return render_template('login.html', message=message
     return render_template('appointment.html')
 
-
 # def allowed_file(filename):
 #     return '.' in filename and \
 #            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
@@ -208,6 +207,11 @@ def hangover():
 def stress():
     
     return render_template('stress.html')
+
+@app.route("/fitness")
+def fitness():
+    
+    return render_template('fitness.html')
 
 @app.route("/fitness1")
 def fitness1():
