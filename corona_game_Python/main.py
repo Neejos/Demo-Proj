@@ -208,10 +208,10 @@ def stress():
     
     return render_template('stress.html')
 
-@app.route("/fitness")
-def fitness():
+# @app.route("/fitness")
+# def fitness():
     
-    return render_template('fitness.html')
+#     return render_template('fitness.html')
 
 @app.route("/fitness1")
 def fitness1():
