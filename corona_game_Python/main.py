@@ -1,13 +1,15 @@
-from flask import Flask, render_template,redirect,request,flash,url_for
+from flask import Flask, render_template,redirect,request,flash,url_for,send_from_directory
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import json
+
 
 # from flex import app,event,ui
 # app.init()
 # Create an instance of Flask app
 app= Flask(__name__,static_url_path='/static')
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/Corona_Hit"
 app.debug=True
 db = SQLAlchemy(app)
@@ -126,27 +128,42 @@ def sign_user():
         else:
             print(lst)
             message = "Correct username and password"
+
+            phone_num = FormDetails.query.with_entities(FormDetails.phone).filter(FormDetails.name==username).filter(FormDetails.email == email_form).first()
+        
+            Corona_surv = FormDetails.query.with_entities(FormDetails.Corona_Survivor_Details).filter(FormDetails.name==username).filter(FormDetails.email == email_form).first()
+            Blood_Type = FormDetails.query.with_entities(FormDetails.Blood_Group_Type).filter(FormDetails.name==username).filter(FormDetails.email == email_form).first()
             # Corona_Survivor = FormDetails.query.filter(FormDetails.name==username)..filter(FormDetails.email == email_form).
-            return render_template('profile.html',message=message,username=username,email_form=email_form)
+            return render_template('profile.html',message=message,username=username,email_form=email_form,phone_num=phone_num ,Corona_surv=Corona_surv,Blood_Type=Blood_Type)
 
 @app.route("/appointment")
 def appointment():
   
     # return render_template('login.html', message=message
     return render_template('appointment.html')
+
+
+# def allowed_file(filename):
+#     return '.' in filename and \
+#            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+           
+@app.route('/profile')
+def profile():
+
+    return render_template('profile.html')
+# @app.route('/show/<filename>')
+# def uploaded_file(filename):
+#         filename = 'http://127.0.0.1:5000/uploads/' + filename
+#     return render_template('profile.html', filename=filename)
+
+# @app.route('/uploads/<filename>')
+# def send_file(filename):
+#     path = UPLOAD_FOLDER + "/" + filename
+#     return send_from_directory(UPLOAD_FOLDER, filename)
     
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST':
-        file = request.files['file']
-        extension = os.path.splitext(file.filename)[1]
-        f_name = str(uuid.uuid4()) + extension
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
-        return json.dumps({'filename':f_name})
-    return
 @app.route("/about")
 def about():
-    return render_template('new.html')
+    return render_template('about.html')
 
 @app.route("/insight")
 def insight():
@@ -168,10 +185,10 @@ def blog():
     
     return render_template('blog.html')
     
-@app.route("/profile")
-def profile():
+# @app.route("/profile")
+# def profile():
     
-    return render_template('profile.html')
+#     return render_template('profile.html')
 
 @app.route("/remedies")
 def remedies():

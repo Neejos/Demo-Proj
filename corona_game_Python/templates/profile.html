@@ -202,24 +202,42 @@
     <form method="post">
         <div class="row">
             <div class="col-md-4">
-                <div class="profile-img">
-                    <img id="idcardfront" src="images/UploadImgPlaceholder.png" data-type="editable" />
+                <div class="profile-img" >
+                  <input type='file' />
+                  <!-- <br><img id="myImg" src="#" alt="your image" style="width: 80px;height:80px"> -->
+                    <script>
+                      window.addEventListener('load', function() {
+                        document.querySelector('input[type="file"]').addEventListener('change', function() {
+                            if (this.files && this.files[0]) {
+                                var img = document.querySelector('img');  // $('img')[0]
+                                img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+                                img.onload = imageIsLoaded;
+                                img.height = 150;
+                                img.width =150;
+                              
+                            }
+                            });
+                          });
+
+                          function imageIsLoaded() { 
+                            alert(this.src);  // blob url
+                            // update width and height ...
+                          }
+                        </script>
 
                     <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/> -->
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo
-                        <input type="file" name="file"/>
-                    </div>
+                  <!-- <div class="file btn btn-lg btn-primary">
+                         Change Photo
+                        <input type="file" name="file"/> -->
+                    <!-- </div> -->
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="profile-head">
-                            <h5>
-                                {{username}}
-                            </h5>
-                            <h6>
-                                {{email_form}}
-                            </h6>
+                            <h3 style="color: purple;">
+                               Welcome  {{username}}!!!!!
+                            </h3>
+                          
                             <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -237,7 +255,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div class="profile-work">
+                <!-- <div class="profile-work">
                     <p>WORK LINK</p>
                     <a href="">Website Link</a><br/>
                     <a href="">Bootsnipp Profile</a><br/>
@@ -248,7 +266,7 @@
                     <a href="">WordPress</a><br/>
                     <a href="">WooCommerce</a><br/>
                     <a href="">PHP, .Net</a><br/>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-8">
                 <div class="tab-content profile-tab" id="myTabContent">
@@ -275,7 +293,7 @@
                                         <label>Blood Group</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>123 456 7890</p>
+                                        <p>{{Blood_Type}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -283,19 +301,20 @@
                                         <label>Corona Survivor</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Web Developer and Designer</p>
+                                        <p>{{Corona_surv}}</p>
                                     </div>
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Phone No.</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>Web Developer and Designer</p>
-                                    </div>
-                                    
-                                </div>
+                                  <div class="col-md-6">
+                                      <label>Phone Number</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{phone_num}}</p>
+                                  </div>
+
+                              </div>
+                               
                     <!-- </div> -->
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row">
@@ -408,7 +427,7 @@
             <div class="footer-logo">
               <figure>
                 <a href="index.html">
-                  <img src="../images/logo-2.png" alt="">
+                  <!-- <img src="../images/logo-2.png" alt=""> -->
                 </a>
               </figure>
             </div>
@@ -470,7 +489,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object" src="../static/images/blog/himani.jpg" alt="post-thumb">
+                      <img class="media-object" src="../static/images/blog/himani.jpg" alt="post-thumb" style="height: 80px;width: 80px;">
                     </a>
                   </div>
                   <div class="media-body">
