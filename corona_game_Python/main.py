@@ -2,6 +2,7 @@ from flask import Flask, render_template,redirect,request,flash,url_for
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import json
 
 # from flex import app,event,ui
 # app.init()
@@ -134,11 +135,18 @@ def appointment():
     # return render_template('login.html', message=message
     return render_template('appointment.html')
     
-   
-    
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        file = request.files['file']
+        extension = os.path.splitext(file.filename)[1]
+        f_name = str(uuid.uuid4()) + extension
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
+        return json.dumps({'filename':f_name})
+    return
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template('new.html')
 
 @app.route("/insight")
 def insight():
@@ -191,8 +199,15 @@ def fitness1():
 
 @app.route("/fitness2")
 def fitness2():
-    
     return render_template('fitness2.html')
+
+@app.route("/fitness3")
+def fitness3():
+    return render_template('fitness3.html')
+
+@app.route("/fitness4")
+def fitness4():
+    return render_template('fitness4.html')   
 
     
 @app.route("/officestress")
@@ -203,6 +218,7 @@ def officestress():
 def immunitysyrup():
     
     return render_template('immunitysyrup.html')
+
 
 
 # @app.route("/home")
